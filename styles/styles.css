@@ -1,0 +1,300 @@
+:root {
+    --background: #f7f3eb;
+    --surface: #fffdf8;
+    --primary: #263a33;
+    --primary-dark: #192720;
+    --accent: #9b6b43;
+    --text: #302d29;
+    --muted: #6d6861;
+    --border: #ddd4c6;
+    --light-text: #ffffff;
+    --max-width: 1100px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.7;
+    background-color: var(--background);
+    color: var(--text);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+}
+
+header {
+    background-color: var(--surface);
+    border-bottom: 1px solid var(--border);
+}
+
+.header-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.logo {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.navigation {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.navigation a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+.navigation a:hover {
+    color: var(--accent);
+}
+
+.hero {
+    min-height: 75vh;
+    padding: 5rem 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background:
+        linear-gradient(rgb(25 39 32 / 82%), rgb(25 39 32 / 82%)),
+        url("../images/hero-placeholder.jpg") center / cover;
+    color: var(--light-text);
+}
+
+.hero-content {
+    max-width: 750px;
+}
+
+.eyebrow,
+.section-label {
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: var(--accent);
+}
+
+.hero h1 {
+    margin-bottom: 1.5rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.8rem, 8vw, 5.5rem);
+    line-height: 1.1;
+}
+
+.hero-quote {
+    max-width: 650px;
+    margin: 0 auto 2rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.25rem;
+    font-style: italic;
+}
+
+.button {
+    display: inline-block;
+    padding: 0.85rem 1.5rem;
+    border: 2px solid var(--primary);
+    background-color: var(--primary);
+    color: var(--light-text);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.button:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+.button-light {
+    background-color: transparent;
+    border-color: var(--light-text);
+}
+
+.button-light:hover {
+    background-color: var(--light-text);
+    border-color: var(--light-text);
+    color: var(--primary);
+}
+
+.section {
+    padding: 5rem 1.5rem;
+}
+
+.section-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.section h2 {
+    margin-bottom: 1.5rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.2;
+    color: var(--primary);
+}
+
+.section p {
+    margin-bottom: 1rem;
+}
+
+.about {
+    background-color: var(--surface);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: minmax(250px, 400px) 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.author-image-placeholder {
+    min-height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed var(--border);
+    background-color: var(--background);
+    color: var(--muted);
+}
+
+.books {
+    text-align: center;
+}
+
+.book-grid {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(250px, 1fr));
+    gap: 2rem;
+    text-align: left;
+}
+
+.book-card {
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background-color: var(--surface);
+}
+
+.book-cover-placeholder {
+    min-height: 420px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ded5c7;
+    color: var(--muted);
+}
+
+.book-content {
+    padding: 1.5rem;
+}
+
+.book-content h3 {
+    margin-bottom: 0.75rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+.text-link {
+    color: var(--accent);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.text-link:hover {
+    text-decoration: underline;
+}
+
+.upcoming {
+    background-color: var(--primary);
+    color: var(--light-text);
+    text-align: center;
+}
+
+.upcoming h2 {
+    color: var(--light-text);
+}
+
+.upcoming-content {
+    max-width: 750px;
+}
+
+.contact-content {
+    max-width: 700px;
+    text-align: center;
+}
+
+footer {
+    padding: 2rem 1.5rem;
+    background-color: var(--primary-dark);
+    color: var(--light-text);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 750px) {
+    .header-container {
+        flex-direction: column;
+    }
+
+    .navigation {
+        justify-content: center;
+        gap: 0.75rem 1rem;
+    }
+
+    .hero {
+        min-height: 65vh;
+    }
+
+    .about-grid,
+    .book-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-grid {
+        gap: 2rem;
+    }
+
+    .author-image-placeholder {
+        min-height: 350px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
