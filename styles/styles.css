@@ -1,15 +1,27 @@
+/* =========================================================
+   1. VARIABLES
+   ========================================================= */
+
 :root {
     --background: #f7f3eb;
     --surface: #fffdf8;
+
     --primary: #263a33;
     --primary-dark: #192720;
     --accent: #9b6b43;
+
     --text: #302d29;
     --muted: #6d6861;
     --border: #ddd4c6;
     --light-text: #ffffff;
+
     --max-width: 1100px;
 }
+
+
+/* =========================================================
+   2. RESET / BASE
+   ========================================================= */
 
 * {
     box-sizing: border-box;
@@ -37,92 +49,72 @@ a {
     color: inherit;
 }
 
-header {
-    background-color: var(--surface);
-    border-bottom: 1px solid var(--border);
+
+/* =========================================================
+   3. SHARED LAYOUT
+   ========================================================= */
+
+.section {
+    padding: 5rem 1.5rem;
 }
 
-.header-container {
+.section-container {
+    width: 100%;
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: 1rem 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2rem;
 }
 
-.logo {
+.section h2 {
+    margin-bottom: 1.5rem;
+
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 1.4rem;
-    font-weight: bold;
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.2;
+
     color: var(--primary);
-    text-decoration: none;
 }
 
-.navigation {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    list-style: none;
-}
-
-.navigation a {
-    color: var(--text);
-    text-decoration: none;
-}
-
-.navigation a:hover {
-    color: var(--accent);
-}
-
-.hero {
-    min-height: 75vh;
-    padding: 5rem 1.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background:
-        linear-gradient(rgb(25 39 32 / 82%), rgb(25 39 32 / 82%)),
-        url("../images/hero-placeholder.jpg") center / cover;
-    color: var(--light-text);
-}
-
-.hero-content {
-    max-width: 750px;
+.section p {
+    margin-bottom: 1rem;
 }
 
 .eyebrow,
 .section-label {
     margin-bottom: 0.75rem;
+
     text-transform: uppercase;
     letter-spacing: 0.15rem;
     font-size: 0.8rem;
     font-weight: bold;
+
     color: var(--accent);
 }
 
-.hero h1 {
-    margin-bottom: 1.5rem;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(2.8rem, 8vw, 5.5rem);
-    line-height: 1.1;
+.section-intro {
+    max-width: 700px;
+    margin: 0 auto 2rem;
+
+    color: var(--muted);
 }
 
-.hero-quote {
-    max-width: 650px;
-    margin: 0 auto 2rem;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 1.25rem;
-    font-style: italic;
+.section-action {
+    margin-top: 2.5rem;
+    text-align: center;
 }
+
+
+/* =========================================================
+   4. BUTTONS / LINKS
+   ========================================================= */
 
 .button {
     display: inline-block;
+
     padding: 0.85rem 1.5rem;
+
     border: 2px solid var(--primary);
     background-color: var(--primary);
+
     color: var(--light-text);
     text-decoration: none;
     font-weight: bold;
@@ -141,86 +133,7 @@ header {
 .button-light:hover {
     background-color: var(--light-text);
     border-color: var(--light-text);
-    color: var(--primary);
-}
 
-.section {
-    padding: 5rem 1.5rem;
-}
-
-.section-container {
-    max-width: var(--max-width);
-    margin: 0 auto;
-}
-
-.section h2 {
-    margin-bottom: 1.5rem;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(2rem, 5vw, 3rem);
-    line-height: 1.2;
-    color: var(--primary);
-}
-
-.section p {
-    margin-bottom: 1rem;
-}
-
-.about {
-    background-color: var(--surface);
-}
-
-.about-grid {
-    display: grid;
-    grid-template-columns: minmax(250px, 400px) 1fr;
-    gap: 4rem;
-    align-items: center;
-}
-
-.author-image-placeholder {
-    min-height: 450px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px dashed var(--border);
-    background-color: var(--background);
-    color: var(--muted);
-}
-
-.books {
-    text-align: center;
-}
-
-.book-grid {
-    margin-top: 3rem;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(250px, 1fr));
-    gap: 2rem;
-    text-align: left;
-}
-
-.book-card {
-    overflow: hidden;
-    border: 1px solid var(--border);
-    background-color: var(--surface);
-}
-
-.book-cover-placeholder {
-    min-height: 420px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #ded5c7;
-    color: var(--muted);
-}
-
-.book-content {
-    padding: 1.5rem;
-}
-
-.book-content h3 {
-    margin-bottom: 0.75rem;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 1.5rem;
     color: var(--primary);
 }
 
@@ -234,8 +147,303 @@ header {
     text-decoration: underline;
 }
 
+
+/* =========================================================
+   5. HEADER / NAVIGATION
+   ========================================================= */
+
+header {
+    background-color: var(--surface);
+    border-bottom: 1px solid var(--border);
+}
+
+.header-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 2rem;
+}
+
+.logo {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.navigation {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 1.5rem;
+
+    list-style: none;
+}
+
+.navigation a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+.navigation a:hover {
+    color: var(--accent);
+}
+
+
+/* =========================================================
+   6. HOME — HERO
+   ========================================================= */
+
+.hero {
+    min-height: 75vh;
+    padding: 5rem 1.5rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgb(25 39 32 / 82%),
+            rgb(25 39 32 / 82%)
+        ),
+        url("../images/hero-placeholder.jpg") center / cover;
+
+    color: var(--light-text);
+}
+
+.hero-content {
+    max-width: 750px;
+}
+
+.hero h1 {
+    margin-bottom: 1.5rem;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.8rem, 8vw, 5.5rem);
+    line-height: 1.1;
+}
+
+.hero-quote {
+    max-width: 650px;
+    margin: 0 auto 2rem;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.25rem;
+    font-style: italic;
+}
+
+
+/* =========================================================
+   7. HOME — ABOUT / BIOGRAPHY
+   ========================================================= */
+
+.about {
+    background-color: var(--surface);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: minmax(250px, 400px) 1fr;
+
+    gap: 4rem;
+    align-items: center;
+}
+
+
+/* Temporary placeholder */
+
+.author-image-placeholder {
+    min-height: 450px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 2px dashed var(--border);
+
+    background-color: var(--background);
+    color: var(--muted);
+}
+
+
+/* Actual author photograph */
+
+.author-image {
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.author-image img {
+    width: 100%;
+    height: 500px;
+
+    object-fit: cover;
+    object-position: center top;
+}
+
+
+/* =========================================================
+   8. BOOKS
+   ========================================================= */
+
+.books {
+    text-align: center;
+}
+
+.book-grid {
+    margin-top: 3rem;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(250px, 1fr));
+
+    gap: 2rem;
+
+    text-align: left;
+}
+
+.book-card {
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+    background-color: var(--surface);
+}
+
+
+/* Temporary cover */
+
+.book-cover-placeholder {
+    min-height: 420px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #ded5c7;
+    color: var(--muted);
+}
+
+
+/* Actual book covers */
+
+.book-cover {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+
+    overflow: hidden;
+
+    background-color: #f4f1eb;
+}
+
+.book-cover img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+.book-content {
+    padding: 1.5rem;
+}
+
+.book-content h3 {
+    margin-bottom: 0.75rem;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.5rem;
+
+    color: var(--primary);
+}
+
+
+/* =========================================================
+   9. ANTHOLOGIES
+   ========================================================= */
+
+.anthologies {
+    background-color: var(--surface);
+    text-align: center;
+}
+
+.anthology-grid {
+    margin-top: 3rem;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 1.5rem;
+
+    text-align: left;
+}
+
+.anthology-card {
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+    background-color: var(--background);
+}
+
+.anthology-cover {
+    height: 480px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0.5rem;
+
+    background-color: var(--surface);
+}
+
+.anthology-cover img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+.anthology-content {
+    padding: 1.5rem;
+}
+
+.anthology-label {
+    margin-bottom: 0.5rem;
+
+    color: var(--accent);
+
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.anthology-card h3 {
+    margin-bottom: 1rem;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.4rem;
+    line-height: 1.3;
+
+    color: var(--primary);
+}
+
+
+/* =========================================================
+   10. UPCOMING BOOK
+   ========================================================= */
+
 .upcoming {
     background-color: var(--primary);
+
     color: var(--light-text);
     text-align: center;
 }
@@ -244,17 +452,662 @@ header {
     color: var(--light-text);
 }
 
+.upcoming-grid {
+    display: grid;
+    grid-template-columns: minmax(220px, 340px) 1fr;
+
+    gap: 4rem;
+    align-items: center;
+}
+
 .upcoming-content {
     max-width: 750px;
 }
+
+.upcoming-question {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.3rem;
+    font-style: italic;
+}
+
+.coming-soon-badge {
+    display: inline-block;
+
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+
+    border: 1px solid currentColor;
+
+    text-transform: uppercase;
+    letter-spacing: 0.12rem;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   11. CONTACT
+   ========================================================= */
 
 .contact-content {
     max-width: 700px;
     text-align: center;
 }
 
+
+/* =========================================================
+   12. BOOKS.HTML
+   ========================================================= */
+
+.page-hero {
+    padding: 5rem 1.5rem 3rem;
+
+    text-align: center;
+
+    background-color: var(--surface);
+}
+
+.page-hero h1 {
+    max-width: 850px;
+    margin: 0 auto 1.5rem;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1.1;
+
+    color: var(--primary);
+}
+
+.page-intro {
+    max-width: 700px;
+    margin: 0 auto;
+
+    color: var(--muted);
+    font-size: 1.05rem;
+}
+
+.books-page-section {
+    background-color: var(--background);
+}
+
+.books-page-heading {
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    text-align: center;
+}
+
+.books-page-heading p:last-child {
+    color: var(--muted);
+}
+
+.book-grid-page {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.navigation a[aria-current="page"] {
+    color: var(--accent);
+    font-weight: bold;
+}
+
+/* =========================================================
+   BOOKS PAGE — CATALOG
+   ========================================================= */
+
+.catalog-section {
+    background-color: var(--background);
+}
+
+.catalog-heading {
+    max-width: 720px;
+    margin: 0 auto 4rem;
+    text-align: center;
+}
+
+.catalog-heading p:last-child {
+    color: var(--muted);
+}
+
+
+/* Featured books */
+
+.featured-books-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+.featured-book {
+    display: grid;
+    grid-template-columns: minmax(220px, 340px) 1fr;
+
+    gap: 4rem;
+    align-items: center;
+
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.featured-book-reverse {
+    grid-template-columns: 1fr minmax(220px, 340px);
+}
+
+.featured-book-reverse .featured-book-cover {
+    order: 2;
+}
+
+.featured-book-reverse .featured-book-info {
+    order: 1;
+}
+
+.featured-book-cover {
+    width: 100%;
+}
+
+.featured-book-cover img {
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+}
+
+.featured-book-cover .book-cover-placeholder {
+    min-height: 480px;
+}
+
+.featured-book-info {
+    max-width: 520px;
+}
+
+.featured-book-info h3 {
+    margin-bottom: 1rem;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    line-height: 1.2;
+
+    color: var(--primary);
+}
+
+.book-type {
+    margin-bottom: 0.75rem;
+
+    color: var(--accent);
+
+    text-transform: uppercase;
+    letter-spacing: 0.12rem;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.book-details {
+    margin-top: 1.5rem;
+
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+
+/* Anthology detail */
+
+.anthology-story {
+    margin-top: 1rem;
+    margin-bottom: 0.25rem;
+
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+
+/* Bottom return section */
+
+.books-return {
+    background-color: var(--surface);
+}
+
+.books-return-content {
+    max-width: 700px;
+
+    text-align: center;
+}
+
+
+/* Responsive */
+
+@media (max-width: 750px) {
+
+    .featured-book,
+    .featured-book-reverse {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .featured-book-reverse .featured-book-cover,
+    .featured-book-reverse .featured-book-info {
+        order: initial;
+    }
+
+    .featured-book-cover {
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .featured-book-info {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .featured-book-cover .book-cover-placeholder {
+        min-height: 420px;
+    }
+}
+
+/* =========================================================
+   ABOUT.HTML
+   ========================================================= */
+
+.author-page-hero {
+    background-color: var(--surface);
+}
+
+.author-page-grid {
+    display: grid;
+    grid-template-columns: minmax(280px, 400px) 1fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+.author-page-image {
+    overflow: hidden;
+}
+
+.author-page-image img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.author-page-intro h1 {
+    margin-bottom: 1rem;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.7rem, 6vw, 4.5rem);
+    line-height: 1.05;
+
+    color: var(--primary);
+}
+
+.author-pen-name {
+    margin-bottom: 2rem;
+
+    color: var(--accent);
+    font-size: 0.9rem;
+    letter-spacing: 0.04rem;
+}
+
+.author-lead {
+    margin-bottom: 1.5rem;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.35rem;
+    line-height: 1.6;
+
+    color: var(--primary);
+}
+
+
+/* Story */
+
+.author-story {
+    background-color: var(--background);
+}
+
+.author-story-container {
+    max-width: 760px;
+}
+
+.author-story-container h2 {
+    margin-bottom: 2rem;
+}
+
+
+/* Family + writing */
+
+.author-life {
+    background-color: var(--surface);
+}
+
+.author-life-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 5rem;
+}
+
+.author-life-block h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+
+/* Literary work */
+
+.author-work {
+    background-color: var(--background);
+}
+
+.author-work-content {
+    max-width: 760px;
+    text-align: center;
+}
+
+.author-work-content .button {
+    margin-top: 1.5rem;
+}
+
+
+/* Contact */
+
+.author-contact {
+    background-color: var(--primary);
+    color: var(--light-text);
+}
+
+.author-contact-content {
+    max-width: 700px;
+    text-align: center;
+}
+
+.author-contact h2 {
+    color: var(--light-text);
+}
+
+
+/* Responsive */
+
+@media (max-width: 750px) {
+
+    .author-page-grid,
+    .author-life-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .author-page-grid {
+        gap: 2.5rem;
+    }
+
+    .author-page-image {
+        width: 100%;
+        max-width: 380px;
+        margin: 0 auto;
+    }
+
+    .author-page-image img {
+        height: auto;
+    }
+
+    .author-page-intro {
+        text-align: center;
+    }
+
+    .author-life-grid {
+        gap: 3rem;
+    }
+}
+
+/* =========================================================
+   CONTACT.HTML
+   ========================================================= */
+
+.contact-page {
+    background-color: var(--surface);
+}
+
+.contact-page-grid {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+
+    gap: 5rem;
+    align-items: start;
+}
+
+.contact-page-intro h1 {
+    margin-bottom: 1.5rem;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.8rem, 6vw, 4.5rem);
+    line-height: 1.05;
+
+    color: var(--primary);
+}
+
+.contact-lead {
+    margin-bottom: 1.5rem;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.25rem;
+    line-height: 1.6;
+
+    color: var(--primary);
+}
+
+.contact-direct {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+
+    border-top: 1px solid var(--border);
+}
+
+.contact-direct-label {
+    margin-bottom: 0.25rem;
+
+    color: var(--muted);
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+.contact-direct a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-direct a:hover {
+    text-decoration: underline;
+}
+
+
+/* Contact form */
+
+.contact-form-wrapper {
+    padding: 2.5rem;
+
+    border: 1px solid var(--border);
+    background-color: var(--background);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-group label {
+    color: var(--primary);
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+
+    padding: 0.9rem 1rem;
+
+    border: 1px solid var(--border);
+    background-color: var(--surface);
+
+    color: var(--text);
+    font: inherit;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+
+/* Reasons */
+
+.contact-reasons {
+    background-color: var(--background);
+    text-align: center;
+}
+
+.contact-reasons-grid {
+    margin-top: 3rem;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 1.5rem;
+}
+
+.contact-reasons-grid article {
+    padding: 2rem;
+
+    border: 1px solid var(--border);
+    background-color: var(--surface);
+}
+
+.contact-reasons-grid h3 {
+    margin-bottom: 0.75rem;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.4rem;
+
+    color: var(--primary);
+}
+
+
+/* Contact responsive */
+
+@media (max-width: 750px) {
+
+    .contact-page-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .contact-form-wrapper {
+        padding: 1.5rem;
+    }
+
+    .contact-reasons-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================================
+   ABOUT - AWARDS
+   ========================================================= */
+
+.author-awards {
+    background-color: var(--primary);
+    color: var(--light-text);
+}
+
+.awards-heading {
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    text-align: center;
+}
+
+.awards-heading h2 {
+    color: var(--light-text);
+}
+
+.awards-heading p:last-child {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.awards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.award-card {
+    padding: 2.25rem;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+.award-year {
+    margin-bottom: 0.75rem;
+
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 0.12rem;
+    text-transform: uppercase;
+}
+
+.award-card h3 {
+    margin-bottom: 0.5rem;
+
+    color: var(--light-text);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.5rem;
+    line-height: 1.3;
+}
+
+.award-organization {
+    margin-bottom: 1.5rem;
+
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.award-note {
+    margin-top: 1rem;
+
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+@media (max-width: 750px) {
+
+    .awards-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+/* =========================================================
+   13. FOOTER
+   ========================================================= */
+
 footer {
     padding: 2rem 1.5rem;
+
     background-color: var(--primary-dark);
     color: var(--light-text);
 }
@@ -262,11 +1115,33 @@ footer {
 .footer-content {
     display: flex;
     justify-content: space-between;
+
     gap: 2rem;
+
     font-size: 0.9rem;
 }
 
+
+/* =========================================================
+   14. RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .anthology-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   15. RESPONSIVE — MOBILE
+   ========================================================= */
+
 @media (max-width: 750px) {
+
+    /* Header */
+
     .header-container {
         flex-direction: column;
     }
@@ -276,22 +1151,60 @@ footer {
         gap: 0.75rem 1rem;
     }
 
+
+    /* Hero */
+
     .hero {
         min-height: 65vh;
     }
 
-    .about-grid,
-    .book-grid {
-        grid-template-columns: 1fr;
-    }
+
+    /* Biography */
 
     .about-grid {
+        grid-template-columns: 1fr;
         gap: 2rem;
     }
 
     .author-image-placeholder {
         min-height: 350px;
     }
+
+    .author-image {
+        width: 100%;
+        max-width: 400px;
+
+        margin: 0 auto;
+    }
+
+    .author-image img {
+        height: auto;
+    }
+
+
+    /* Books */
+
+    .book-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Upcoming */
+
+    .upcoming-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .upcoming-cover {
+        width: 100%;
+        max-width: 320px;
+
+        margin: 0 auto;
+    }
+
+
+    /* Footer */
 
     .footer-content {
         flex-direction: column;
